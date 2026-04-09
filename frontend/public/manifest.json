@@ -1,0 +1,9 @@
+{
+  "short_name": "StrangerChat",
+  "name": "Stranger Chat - Meet Someone New",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#6c63ff",
+  "background_color": "#0f0f1a"
+}
