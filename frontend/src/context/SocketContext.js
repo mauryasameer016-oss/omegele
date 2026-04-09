@@ -8,7 +8,7 @@ export const SocketProvider = ({ children }) => {
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
-    const socket = io('http://localhost:5000', {
+    const socket = io("https://omegele-t1lb.onrender.com", {
       transports: ['websocket'],
       autoConnect: true,
     });
