@@ -33,11 +33,13 @@ app.register_blueprint(admin_bp, url_prefix='/api/admin')
 # Register socket events
 register_socket_events(socketio)
 
+init_db()
+
 @app.route('/api/health')
 def health():
     return {'status': 'ok', 'message': 'StrangerChat API running'}
 
 if __name__ == '__main__':
-    init_db()
-    print("🚀 StrangerChat backend running on http://localhost:5000")
+    
+    print("🚀 StrangerChat backend running on https://omegele-t1lb.onrender.com")
     socketio.run(app, host='0.0.0.0', port=5000, debug=True, allow_unsafe_werkzeug=True)
