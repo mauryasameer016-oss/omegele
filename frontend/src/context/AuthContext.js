@@ -3,6 +3,9 @@ import axios from 'axios';
 
 const AuthContext = createContext(null);
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://omegele-t1lb.onrender.com';
+axios.defaults.baseURL = BACKEND_URL;
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('sc_token'));

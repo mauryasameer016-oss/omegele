@@ -3,13 +3,15 @@ import { io } from 'socket.io-client';
 
 const SocketContext = createContext(null);
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://omegele-t1lb.onrender.com';
+
 export const SocketProvider = ({ children }) => {
   const socketRef = useRef(null);
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
-    const socket = io("https://omegele-t1lb.onrender.com", {
-      transports: ['websocket'],
+    const socket = io(BACKEND_URL, {
+      transports: ['websocket', 'polling'],
       autoConnect: true,
     });
     socketRef.current = socket;
